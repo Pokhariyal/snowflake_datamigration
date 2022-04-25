@@ -95,4 +95,4 @@ finally:
     cs.close()
 cnn.close()
 
-# Different pipes where cretaed for different table this is not actuallly implemented in final code but this part works fine while used in demonstration.
+# Different pipes where created for different table this is not actuallly implemented in final code but this part works fine while used in demonstration.
