@@ -93,8 +93,6 @@ try:
 
 finally:
     cs.close()
-#     pass ##If you want to expand the code you can just comment the close stmt and continue
 cnn.close()
 
-###### Make sure to close the connection I read somewhere its a good practice
-####### THE STAGE AND FILE FORMAT ARE PRE DEFINED ALREADY BY me CHECK OTHER FILE FOR REFERENCE THAT I PROVIDED
+# Different pipes where cretaed for different table this is not actuallly implemented in final code but this part works fine while used in demonstration.
