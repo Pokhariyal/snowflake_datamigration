@@ -1,2 +1,2 @@
-# END TO END Snowflake_datamigration project
-upstream data is from google big query to postgressql from where the real problem starts that reduces the working performance to encounter that the data is loaded into s3 than using databricks some analysis are done and the data is also loaded to snowflake(data warehousing tool). The processed data after some value addition is put back into RDBMS (POSTGRESQL in this case). 
+# Snowflake Datamigration project
+Postgressql is acting as backend from where the real problem starts that reduces the working performance and unable to handle current requirement to encounter that the upstream delta data from bigquery is loaded into server and postgres is immediately unloaded to S3 and some analysis are done and finally data is loaded to snowflake(data warehousing). The processed data after some value addition is put back into RDBMS (POSTGRESQL in this case).  
