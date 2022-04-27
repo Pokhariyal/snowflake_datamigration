@@ -1,0 +1,7 @@
+list @adp/hevodata/adp/SHIPTO/dbo_SHIPTO.csv;
+
+copy into adp_SHIPTO from @adp/hevodata/adp/SHIPTO/dbo_SHIPTO.csv file_format = (type = csv field_optionally_enclosed_by='"') on_error = continue;
+--After loading daat into table there are some bad records which is loaded into error table and cleaned and loaded back into table.
+
+
+create or replace table save_copy_errors as select * from table(validate(adp_shipto, job_id=>'01a3e413-0000-27b3-0003-330a000536e6'));
