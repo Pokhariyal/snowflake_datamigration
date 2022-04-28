@@ -5,3 +5,6 @@ copy into adp_SHIPTO from @adp/hevodata/adp/SHIPTO/dbo_SHIPTO.csv file_format = 
 
 
 create or replace table error_adp_shipto as select * from table(validate(adp_shipto, job_id=>'01a3e413-0000-27b3-0003-330a000536e6'));
+
+select REJECTED_RECORD from save_copy_errors;
+--then we can export this results and cleaned them and insert back into original 
