@@ -1,0 +1,269 @@
+CREATE TABLE RFQ
+    AS
+        WITH cte1 AS (
+            SELECT
+                rh.*,rl.ADDED_DTE
+,rl.ADDED_USR
+,rl.AEROXCHANGE_REPAIRS_PROCESS_REQUEST
+,rl.AGENT_COMMISSION
+,rl.ALT1
+,rl.ALT2
+,rl.BLINE
+,rl.BLINEYN
+,rl.CANCELED
+,rl.CATEGORY
+,rl.CHARGE_AMOUNT
+,rl.CLOSE_QBACK
+,rl.COND
+,rl.CONTRACT_DOC_NO
+,rl.CONV_DOC
+,rl.CONV_DOC_CATEGORY
+,rl.CONV_LN
+,rl.COST
+,rl.COST1
+,rl.COST1_UM
+,rl.COST2
+,rl.COST2_UM
+,rl.COST3
+,rl.COST3_UM
+,rl.COST_CAP
+,rl.COST_CURENCY
+,rl.COST_DATE
+,rl.COST_DOC
+,rl.COST_DOCLINE
+,rl.COST_DOC_CATEGORY
+,rl.COST_FACTOR
+,rl.COST_UM
+,rl.CUSTOM_PRICE
+,rl.CUSTOM_PRICE_UM
+,rl.CUST_PN
+,rl.CUTTING_DIRECTION
+,rl.CUTTING_REQUIRED
+,rl.C_AGENT_COMMISSION
+,rl.C_CHARGE_AMOUNT
+,rl.C_COST
+,rl.C_COST_CAP
+,rl.C_CURENCY
+,rl.C_CUSTOM_PRICE
+,rl.C_DATE
+,rl.C_DOC_TOTAL
+,rl.C_EXCLUDE_PART_COST
+,rl.C_FACTOR
+,rl.C_PRICE_PER_PIECE
+,rl.C_PRICE_PER_WEIGHTUM
+,rl.C_SOURCE_PRICE_VALUE
+,rl.C_TARGETPRICE
+,rl.C_TAX_A_AMT
+,rl.C_TAX_B_AMT
+,rl.C_TAX_C_AMT
+,rl.C_TAX_C_PERC
+,rl.C_UNITP
+,rl.C_UNITP1
+,rl.C_UNITP2
+,rl.C_UNITP3
+,rl.DESCRIPTN
+,rl.DISCOUNT
+,rl.DISCOUNT_TYPE
+,rl.DLV
+,rl.EXCLUDE_PART_COST
+,rl.EXCLUDE_PART_COST_REASON
+,rl.EXCLUSIONS
+,rl.FACTOR
+,rl.HPOST
+,rl.IMPORT_EXPORT_LICENSE
+,rl.IMPORT_EXPORT_OVERRIDE
+,rl.IMPORT_EXPORT_REQUIRED
+,rl.LAST_PRICE_APPROVED
+,rl.LENGTH_FROM
+,rl.LENGTH_FROM_TTL
+,rl.LENGTH_TO_TTL
+,rl.LINE
+,rl.LINE_REF
+,rl.LINE_TYPE
+,rl.LOGNO
+,rl.LSTATUS
+,rl.MAX_SELL
+,rl.MFG
+,rl.MFG_SUBC
+,rl.MIN_QTY
+,rl.MIN_SELL
+,rl.NOCHARGE
+,rl.NOTE
+,rl.NO_CHARGE
+,rl.PARTNUMBER
+,rl.PARTSERIAL
+,rl.PART_SSN
+,rl.PICKED_BY
+,rl.PICKED_ON
+,rl.PICK_LOCATION
+,rl.PICK_STATUS
+,rl.PIECE_LENGTH
+,rl.PIECE_WIDTH
+,rl.PN_RCV_AS
+,rl.PN_RCV_AS_SUBP
+,rl.PN_RCV_LOGNO
+,rl.PRICE_APPROVAL_DATE
+,rl.PRICE_APPROVED_BY
+,rl.PRICE_BY_WEIGHT
+,rl.PRICE_CONTRACT_DOC_NO
+,rl.PRICE_CONTRACT_TYPE
+,rl.PRICE_PER_PIECE
+,rl.PRICE_PER_WEIGHTUM
+,rl.PRINTED
+,rl.PRINTLINE
+,rl.PRN_PN_MEMO1
+,rl.PRN_PN_MEMO2
+,rl.QBACK
+,rl.QORDER
+,rl.QREQ
+,rl.QSCHEDULE
+,rl.QSHIP
+,rl.QTY_CHANGE
+,rl.QTY_CHANGE_UM
+,rl.QTY_CONVERT
+,rl.QTY_FACTOR
+,rl.QTY_INSTOCKREV
+,rl.QTY_UM
+,rl.RECEIVED_BY
+,rl.RECEIVED_ON
+,rl.RECLOCK
+,rl.REF1
+,rl.REF2
+,rl.REF3
+,rl.RELEASED_BY
+,rl.RELEASED_ON
+,rl.REPLENISHMENT_COST
+,rl.REQUESTED_PARTNUMBER
+,rl.REQUESTED_PN_SUBP
+,rl.RESERVED_BY
+,rl.RESERVED_ON
+,rl.RNG
+,rl.ROHS_COMPLIANCE
+,rl.SERIAL_NO
+,rl.SOURCE_PRICE
+,rl.SOURCE_PRICE_VALUE
+,rl.STATUS
+,rl.STOCK_TAX_AMT
+,rl.STOCK_TAX_CALC
+,rl.STOCK_TAX_PERC
+,rl.SUBP
+,rl.SUBT_TAX_A
+,rl.SUBT_TAX_B
+,rl.SUBT_TAX_C
+,rl.TARGETPRICE
+,rl.TOTAL_WEIGHT
+,rl.ULINE1
+,rl.ULINE2
+,rl.UNDER_WARRANTY
+,rl.UNITP
+,rl.UNITP1
+,rl.UNITP1_UM
+,rl.UNITP2
+,rl.UNITP2_UM
+,rl.UNITP3
+,rl.UNITP3_UM
+,rl.UNITP_UM
+,rl.UPDATED_DTE
+,rl.UPDATED_USR
+,rl.VOL_FROM
+,rl.VOL_FROM_TTL
+,rl.VOL_TO_TTL
+,rl.WEIGHT_PER_PIECE
+,rl.WGHT_FROM
+,rl.WGHT_FROM_TTL
+,rl.WGHT_TO_TTL
+            FROM
+                     adp_rfq_hdr rh
+                JOIN adp_rfq_line rl ON rh.doc_no = rl.doc_no
+        ), cte2 AS (
+            SELECT s2.acctno,
+                s2.subc,
+                s2.adr1,
+                s2.adr2,
+                s2.adr3,
+                s2.city,
+                s2.country,
+                s2.county,
+                s2.fax1,
+                s2.fax2,
+                s2.internet,
+                s2.invoice_type,
+                s2.isactive,
+                s2.m1_tax_c,
+                s2.m2_tax_c,
+                s2.m3_tax_c,
+                s2.m4_tax_c,
+                s2.m5_tax_c,
+                s2.m6_tax_c,
+                s2.name,
+                s2.pad,
+                s2.paid_by_ach,
+                s2.paid_by_wire,
+                s2.region,
+                s2.registration_no,
+                s2.registration_upd,
+                s2.registration_valid,
+                s2.ship_code,
+                s2.ship_no,
+                s2.ship_type,
+                s2.sita,
+                s2.spc_2000_c,
+                s2.spec2000,
+                s2.state,
+                s2.tel1,
+                s2.tel1_ext,
+                s2.tel2,
+                s2.tel2_ext,
+                s2.tel_pfix,
+                s2.web_site,
+                s2.zip
+            FROM
+                adp_shipto s2
+            WHERE
+                upper(s2.ship_type) = 'S'
+        )
+        SELECT
+            cte1.*,
+            cte2.adr1,
+            cte2.adr2,
+            cte2.adr3,
+            cte2.city,
+            cte2.country,
+            cte2.county,
+            cte2.fax1,
+            cte2.fax2,
+            cte2.internet,
+            cte2.invoice_type,
+            cte2.isactive,
+            cte2.m1_tax_c,
+            cte2.m2_tax_c,
+            cte2.m3_tax_c,
+            cte2.m4_tax_c,
+            cte2.m5_tax_c,
+            cte2.m6_tax_c,
+            cte2.name,
+            cte2.pad,
+            cte2.paid_by_ach,
+            cte2.paid_by_wire,
+            cte2.region,
+            cte2.registration_no,
+            cte2.registration_upd,
+            cte2.registration_valid,
+            cte2.ship_code,
+            cte2.ship_no,
+            cte2.ship_type,
+            cte2.sita,
+            cte2.spc_2000_c,
+            cte2.spec2000,
+            cte2.state,
+            cte2.tel1,
+            cte2.tel1_ext,
+            cte2.tel2,
+            cte2.tel2_ext,
+            cte2.tel_pfix,
+            cte2.web_site,
+            cte2.zip
+        FROM
+                 cte1
+            JOIN cte2 ON cte1.acctno = cte2.acctno
+                         AND cte1.subc = cte2.subc;
