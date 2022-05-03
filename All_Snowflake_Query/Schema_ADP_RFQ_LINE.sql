@@ -1,8 +1,8 @@
 ﻿CREATE TABLE ADP_RFQ_LINE(
 	DOC_NO int NOT NULL,
 	LINE decimal(28, 9) NOT NULL ,
-	ACCTNO char(12) NULL,
-	SUBC char(5) NULL,
+	ACCTNO char(12) not NULL,
+	SUBC char(5) not NULL,
 	BLINE decimal(28, 9) NULL ,
 	BLINEYN char(1) NULL ,
 	ULINE1 char(6) NULL,
