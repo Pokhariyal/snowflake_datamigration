@@ -4,5 +4,8 @@ Postgressql is acting as backend from where the real problem starts that reduces
 #Project DATA Pipeline is Properly Showcased in Lucid_ELT.jpg
 
 # Overview
-To Setup by role and proper access These Step should be refered. First on snowflake just run the query describe on snowflake_IAM_role.sql ten Aws user group and different policy same goes for oracle jdbc connection credentials required.
+
+ ## Access management:To Setup up role and proper access These Step should be refered.
+Aws Iam roles and access credential generated with required policy in place. sample Template is shared as well.
+First on snowflake just run the query describe on snowflake_IAM_role.sql then Aws user group and different policy same goes for oracle jdbc connection credentials required.
 
