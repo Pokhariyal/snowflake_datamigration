@@ -9,3 +9,5 @@ Postgressql is acting as backend from where the real problem starts that reduces
 Aws Iam roles and access credential generated with required policy in place. sample Template is shared as well.
 First on snowflake just run the query describe on snowflake_IAM_role.sql then Aws user group and different policy same goes for oracle jdbc connection credentials required.
 
+## Pyspaprk script: To read data from RDBMS and Store in S3 as Parquet.
+### why parquet format: 
