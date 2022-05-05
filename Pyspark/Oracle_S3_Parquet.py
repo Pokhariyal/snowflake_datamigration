@@ -5,8 +5,6 @@ from pyspark.sql.functions import *
 from pyspark import *
 spark = SparkSession.builder.master("local").appName("testing").getOrCreate()
 
-# ora_table=open("\\home\\hadoop\\spark_ora\\tables.txt").read()
-# ora_url = "jdbc:oracle:thin:@//mydb.cv7zxeg2rvr0.ap-south-1.rds.amazonaws.com:1521/ORCL"
 ora_url=sys.argv[1]
 oracle_user = sys.argv[2]
 oracle_password=sys.argv[3]
@@ -31,5 +29,4 @@ for x in tabs:
     y= str(current_timestamp())
     file_path= 's3://s3bucketemp/' + x + '/' + x + y
     df.write.parquet(file_path)
-    # df.write.partitionBy("gender","salary").parquet("s3a://location")
-    
+    # df.write.partitionBy("Year","Month").parquet("s3a://location")
