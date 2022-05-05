@@ -4,8 +4,8 @@ Oracle is acting as backend for client and with the increase in volume of data t
 #Project DATA Pipeline is Properly Showcased in Lucid_ELT.jpg
 
 ## After Deployment snow_cron_exec.sh will execute Pyspark code daily on the server.
-### The scripts are divided into three parts 
-#### 1.Util
+### The Code are divided into three parts 
+#### 1.Util (Methods and connectors)
 #### 2.Oracle_TO_S3
 #### 3.S3_To_Snowflake
 
