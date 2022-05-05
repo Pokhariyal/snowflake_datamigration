@@ -5,9 +5,9 @@ Oracle is acting as backend for client and with the increase in volume of data t
 
 ## After Deployment snow_cron_exec.sh will execute Pyspark code daily on the server.
 ### The scripts are divided into three parts 
-####1.Util
-####2.Oracle_TO_S3
-####3.S3_To_Snowflake
+#### 1.Util
+#### 2.Oracle_TO_S3
+#### 3.S3_To_Snowflake
 
  ## Access management:To Setup up role and proper access These Step should be refered.
 Aws Iam roles and access credential generated with required policy in place. sample Template is shared as well.
