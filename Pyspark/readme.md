@@ -1,2 +1,2 @@
 # Overview:
-Snowflake DDL is in all_snowflake_query folder.
+Checkout Snowflake DDL in all_snowflake_query folder with other important queries.
