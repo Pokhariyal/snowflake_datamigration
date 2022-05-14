@@ -4,7 +4,6 @@ copy into adp_po_line from @adp/hevodata/adp/dbo_PO_LINE.csv file_format = (type
 copy into ADP_RFQ_HDR from @adp/hevodata/adp/dbo_RFQ_HDR.csv file_format = (type = csv field_optionally_enclosed_by='"' SKIP_HEADER = 1) on_error = continue;
  copy into ADP_RFQ_LINE from @adp/hevodata/adp/dbo_RFQ_LINE.csv file_format = (type = csv field_optionally_enclosed_by='"' SKIP_HEADER = 1) on_error = continue;
 
-
 copy into adp_so_hdr from @adp/hevodata/adp/SO_HDR/dbo_SO_HDR.csv file_format = (type = csv field_optionally_enclosed_by='"' SKIP_HEADER = 1) on_error = continue;
 copy into adp_so_line from @adp/hevodata/adp/dbo_SO_LINE.csv file_format = (type = csv field_optionally_enclosed_by='"' SKIP_HEADER = 1) on_error = continue;
 
@@ -12,3 +11,13 @@ copy into adp_quote_hdr from @adp/hevodata/adp/QUOTE_HDR/dbo_QUOTE_HDR.csv file_
 copy into adp_quote_line from @adp/hevodata/adp/QUOTE_LINE/dbo_QUOTE_LINE.csv file_format = (type = csv field_optionally_enclosed_by='"' SKIP_HEADER = 1) on_error = continue;
  
  copy into adp_SHIPTO from @adp/hevodata/adp/SHIPTO/dbo_SHIPTO.csv file_format = (type = csv field_optionally_enclosed_by='"' SKIP_HEADER = 1) on_error = continue;
+
+ copy into ADP_STOCK from @adp/adp/STOCK/dbo_STOCK.csv file_format = (type = csv field_optionally_enclosed_by='"' SKIP_HEADER = 1) on_error = continue;
+ copy into ADP_STOCKWH from @adp/adp/STOCKWH/dbo_STOCKWH.csv file_format = (type = csv field_optionally_enclosed_by='"' SKIP_HEADER = 1) on_error = continue;
+  copy into ADP_STOCKEXT from @adp/adp/STOCKEXT/dbo_STOCKEXT.csv file_format = (type = csv field_optionally_enclosed_by='"' SKIP_HEADER = 1) on_error = continue;
+ 
+ copy into ADP_CUSTVENDSETUP from @adp/adp/CUSTVENDSETUP/dbo_CUSTVENDSETUP.csv file_format = (type = csv field_optionally_enclosed_by='"' SKIP_HEADER = 1) on_error =   continue;
+ copy into ADP_CUSTVEND from @adp/adp/CUSTVEND/dbo_CUSTVEND.csv file_format = (type = csv field_optionally_enclosed_by='"' SKIP_HEADER = 1) on_error = continue;
+
+
+copy into ADP_CONTACTS from @adp/adp/CONTACTS/dbo_CONTACTS.csv file_format = (type = csv field_optionally_enclosed_by='"' SKIP_HEADER = 1) on_error = continue;
