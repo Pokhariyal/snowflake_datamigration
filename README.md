@@ -1,5 +1,5 @@
 # Overview: Pyspark Data Migration to Snowflake from various sources.
-Oracle is acting as backend for client and with the increase in volume of data the real problem starts. The current system experiencing a reduction in the working performance and unable to handle situation efficiently. To add into the misery the client also want to implement delta data from bigquery daily loaded into database and stored Csv files in S3 and some analysis are done along the way and finally data is loaded to snowflake Tables (data warehouse). The processed data after some value addition Like analytics and busines logics implementation is put back into RDBMS (For backend use as per client requiremt in this case).  
+Oracle is acting as backend for client and with the increase in volume of data the real problem starts. The current system experiencing a reduction in the working performance and unable to handle situation efficiently. To add into the misery the client also want to implement delta data from bigquery daily loaded into database and stored Csv files in S3 and some analysis are done along the way and finally data is loaded to snowflake Tables (data warehouse). The processed data after some value addition Like analytics and businnes logics implementation is put back into Datalake.  
 
 #Project DATA Pipeline is Properly Showcased in Lucid_ELT.jpg
 
