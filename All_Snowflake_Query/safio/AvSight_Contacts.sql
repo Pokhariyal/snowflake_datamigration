@@ -8,3 +8,17 @@ adp_contacts.work_phone as Phone,adp_contacts.work_state as Other_State,adp_cont
 
 from adp_contacts
 )
+--###########################
+create table avsight_contacts (ACCOUNT VARCHAR(12),EMAIL VARCHAR(100),FAX VARCHAR(40),FIRSTNAME VARCHAR(25),
+                               LASTNAME VARCHAR(25),MAILINGSTREET VARCHAR(100),MOBILEPHONE
+VARCHAR(40),OTHER_CITY
+VARCHAR(50),OTHER_COUNTRY
+VARCHAR(50),OTHER_POSTAL_CODE
+VARCHAR(25),PHONE
+VARCHAR(50),OTHER_STATE
+VARCHAR(2),TITLE
+VARCHAR(30),EXTERNAL_REFERENCE_ID
+NUMBER(38,0))
+
+COPY INTO @adp/adp/AVSIGHT_CONTACTS/avsight_contacts.csv from avsight_contacts
+file_format = (type ='csv' compression=none field_optionally_enclosed_by='"' compression=none NULL_IF=())  header =true HEADER = TRUE single = true max_file_size = 4900000000;
