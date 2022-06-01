@@ -1,3 +1,11 @@
+//Distinct
+create table salesorder as
+select * from (SELECT *,ROW_NUMBER() OVER (PARTITION BY line order by UPDATED_DTE desc) AS ROWNUMBER FROM saleorder)
+            where rownumber = 1;
+            
+//alter table salesorder drop column rownumber;
+//drop table saleorder;
+
 select count(distinct(line)) from (SELECT
                 sh.*,
                 sl.added_dte,
