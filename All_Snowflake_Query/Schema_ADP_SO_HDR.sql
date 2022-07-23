@@ -253,4 +253,6 @@ CREATE or replace TABLE ADP_SO_HDR(
 	C_MISC6_AMT decimal(28, 9) ,
 	C_MISC1_AMT_PAID decimal(28, 9) ,
 	C_MISC2_AMT_PAID decimal(28, 9) ,
-	C_MISC3_AMT_PAID decimal(28, 9));
+	C_MISC3_AMT_PAID decimal(28, 9),
+CONSTRAINT SO_HDR_PK PRIMARY KEY (DOC_NO)
+);
