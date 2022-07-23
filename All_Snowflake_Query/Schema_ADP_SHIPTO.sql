@@ -102,4 +102,6 @@ CREATE or replace TABLE adp_SHIPTO(
 	ADDED_USR char(4) NULL,
 	ADDED_DTE datetime NULL,
 	UPDATED_USR char(4) NULL,
-	UPDATED_DTE datetime NULL);
+	UPDATED_DTE datetime NULL,
+constraint SHIPTO_PRK primary key (SHIP_TYPE , ACCTNO, SUBC,SHIP_NO)
+);
