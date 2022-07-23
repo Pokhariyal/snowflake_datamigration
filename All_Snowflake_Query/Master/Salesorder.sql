@@ -1,5 +1,6 @@
-CREATE TABLE salesorder
-    AS
+CREATE OR REPLACE TABLE salesorder as
+SELECT * FROM 
+( 
         WITH cte1 AS (
             SELECT
                 sh.*,
@@ -235,7 +236,7 @@ CREATE TABLE salesorder
                 upper(s2.ship_type) = 'S'
         )
         SELECT
-            cte1.*,
+            ROW_NUMBER() over(PARTITION BY cte1.line ORDER BY cte1.doc_no,cte1.line,cte1.qship,cte1.subtotal DESC ) AS rk,cte1.*,
             cte2.adr1,
             cte2.adr2,
             cte2.adr3,
@@ -278,4 +279,4 @@ CREATE TABLE salesorder
         FROM
                  cte1
             JOIN cte2 ON cte1.acctno = cte2.acctno
-                         AND cte1.subc = cte2.subc;
+                         AND cte1.subc = cte2.subc) WHERE rk=1;
