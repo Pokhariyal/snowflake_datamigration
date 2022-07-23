@@ -1,7 +1,7 @@
-create table PurchaseOrder as 
-	with cte1 as
-	(
-		select ph.*,pl.ACCTNO_TYPE
+create OR REPLACE table PurchaseOrder as 
+SELECT * FROM 
+( with cte1 as
+		(select ph.*,pl.ACCTNO_TYPE
 ,pl.ADDED_DTE
 ,pl.ADDED_USR
 ,pl.AEROXCHANGE_REPAIRS_PROCESS_REQUEST
@@ -236,7 +236,7 @@ create table PurchaseOrder as
                 upper(s2.ship_type) = 'S'
         )
         SELECT
-            cte1.*,
+            ROW_NUMBER() over(PARTITION BY cte1.line ORDER BY cte1.doc_no,cte1.line,cte1.qship,cte1.subtotal DESC ) AS rk,cte1.*,
             cte2.adr1,
             cte2.adr2,
             cte2.adr3,
@@ -278,4 +278,4 @@ create table PurchaseOrder as
         FROM
                  cte1
             JOIN cte2 ON cte1.acctno = cte2.acctno
-                         AND cte1.subc = cte2.subc;
+                         AND cte1.subc = cte2.subc ) WHERE rk =1;
