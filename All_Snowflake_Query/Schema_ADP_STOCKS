@@ -1,4 +1,4 @@
-CREATE or replace TABLE ADP_STOCK(
+CREATE or replace TABLE ADP_STOCK (
 	PARTNUMBER char(30) NOT NULL,
 	SUBP char(5) NOT NULL,
 	DESCRIPTN char(50) NULL,
@@ -183,6 +183,6 @@ CREATE or replace TABLE ADP_STOCK(
 	ADDED_DTE datetime NULL,
 	UPDATED_USR char(4) NULL,
 	UPDATED_DTE datetime NULL,
-	MISC_1 VARCHAR default null
-	constraint STOCK_PK primary key (PARTNUMBER,SUBP )
+	uniqueid int default null,
+	constraint STOCK_PK primary key(PARTNUMBER,SUBP)
 	);
