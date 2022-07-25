@@ -20,8 +20,8 @@ QORDER as totalQuantity,QSHIP as quantityShipped,UNITP as unitRevenue,
 SUBTOTAL as extendedRevenue,SHIP_DATE as requestedShipDate,DOC_NO as orderNumber
 ,SHIPTO as locationCode,ACCTNO as customerId,CITY as shipCity,STATE as shipState,
 COUNTRY as shipCountry,ZIP as shipPostalCode,ACCTNO as accountSkuNumber
-from salesorder
-where SHIP_COMPLETE != 'N')
+from salesorder)
+-- where SHIP_COMPLETE != 'N')
 
 select LINEITEMXREF,SKU,ORDERSTATUS,ORDERTYPE,ACCOUNT,ACCOUNTCLASS,ACCOUNTNUMBER,
 TOTALQUANTITY,QUANTITYSHIPPED,UNITREVENUE,EXTENDEDREVENUE,REQUESTEDSHIPDATE,ORDERNUMBER,LOCATIONCODE,
